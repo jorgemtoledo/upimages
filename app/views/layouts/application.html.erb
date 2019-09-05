@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upimages</title>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+        <%= render "shared/navbar" %>
+    </header>
+      <main>
+        <div id="flash">
+          <% flash.each do |key, value| %>
+            <div class="flash <%= key %>"><%= value %></div>
+          <% end %>
+        </div>
+	      <div class="container">
+	        <%= yield %>
+	      </div>
+	    </main>
+	 
+      <footer class="container">
+        <%= render "shared/footer" %>
+	    </footer>
+  </body>
+</html>
